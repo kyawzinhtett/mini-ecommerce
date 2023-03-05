@@ -1,7 +1,15 @@
 const express = require("express");
-const { getProducts } = require("../controllers/shopController");
+const {
+  getIndex,
+  getAllProducts,
+  getProduct,
+  getCart,
+} = require("../controllers/shopController");
 const router = express.Router();
 
-router.get("/", getProducts);
+router.get("/", getIndex);
+router.get("/products", getAllProducts);
+router.get("/products/:productID", getProduct);
+router.get("/cart", getCart);
 
 module.exports = router;

@@ -1,10 +1,18 @@
+const path = require("path");
 const express = require("express");
 require("dotenv").config();
 const authRouter = require("./routes/auth");
+const shopRouter = require("./routes/shop");
 const notFound = require("./middlewares/not-found");
 
 const port = 3000;
 const app = express();
+
+// Set view engine to ejs
+app.set("view engine", "ejs");
+
+// Serve public folder
+app.use(express.static(path.join(__dirname, "public")));
 
 // Middlewares
 app.use(express.urlencoded({ extended: false }));
@@ -12,6 +20,7 @@ app.use(express.json());
 
 // Routes
 app.use("/api/v1/auth", authRouter);
+app.use("/", shopRouter);
 
 app.use(notFound);
 

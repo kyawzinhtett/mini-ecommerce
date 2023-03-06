@@ -3,15 +3,15 @@ const productSchema = new mongoose.Schema(
   {
     title: {
       type: String,
-      required: true,
+      required: [true, "Please provide product title"],
     },
     description: {
       type: String,
-      required: true,
+      required: [true, "Please provide product description"],
     },
     category: {
       type: String,
-      required: true,
+      required: [true, "Please provide product category"],
     },
     quantity: {
       type: Number,
@@ -19,7 +19,7 @@ const productSchema = new mongoose.Schema(
     },
     price: {
       type: Number,
-      required: true,
+      required: [true, "Please provide product price"],
     },
     imageUrl: {
       type: String,

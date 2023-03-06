@@ -3,6 +3,7 @@ const express = require("express");
 require("dotenv").config();
 const connectDB = require("./db/connect");
 const authRouter = require("./routes/auth");
+const adminRouter = require("./routes/admin");
 const shopRouter = require("./routes/shop");
 const notFound = require("./middlewares/not-found");
 
@@ -24,6 +25,7 @@ app.use(express.json());
 
 // Routes
 app.use("/api/v1/auth", authRouter);
+app.use("/admin", adminRouter);
 app.use("/", shopRouter);
 
 app.use(notFound);

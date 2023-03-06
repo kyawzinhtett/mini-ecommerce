@@ -2,10 +2,11 @@ const Product = require("../models/Product");
 
 const getAllProducts = async (req, res) => {
   const products = await Product.find().sort("-createdAt");
-  res.status(200).json({
-    count: products.length,
-    products,
-  });
+  res.status(200).render("admin", { products });
+};
+
+const getAddProduct = async (req, res) => {
+  res.render("add-product");
 };
 
 const createProduct = async (req, res) => {
@@ -35,4 +36,10 @@ const deleteProduct = async (req, res) => {
   res.status(204).send();
 };
 
-module.exports = { getAllProducts, createProduct, editProduct, deleteProduct };
+module.exports = {
+  getAllProducts,
+  getAddProduct,
+  createProduct,
+  editProduct,
+  deleteProduct,
+};

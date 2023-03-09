@@ -18,7 +18,7 @@
     <div class="container">
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand logo_h" href="index.html"
+        <a class="navbar-brand logo_h" href="/admin"
           ><img src="img/logo.png" alt=""
         /></a>
         <button
@@ -34,7 +34,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="#"
+            <a class="nav-item nav-link active" href="/admin"
               >Home <span class="sr-only">(current)</span></a
             >
             <a class="nav-item nav-link" href="/admin/add-product"
@@ -71,8 +71,18 @@
             <td><%= product.price %></td>
             <td><%= product.image %></td>
             <td>
-              <a href="#" class="btn btn-primary">Edit</a>
-              <a href="#" class="btn btn-danger">Delete</a>
+              <a
+                href="/admin/edit-product/<%= product.id %>"
+                class="btn btn-primary"
+                >Edit</a
+              >
+              <form
+                action="/admin/delete-product/<%= product._id %>"
+                method="POST"
+                class="d-inline"
+              >
+                <button class="btn btn-danger">Delete</button>
+              </form>
             </td>
           </tr>
           <% i++ } %>

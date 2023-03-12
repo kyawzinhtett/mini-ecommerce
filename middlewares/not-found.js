@@ -1,5 +1,5 @@
 const NotFound = (req, res) => {
-  res.status(404).send("This route does not exist");
+  res.status(404).render("404");
 };
 
 module.exports = NotFound;

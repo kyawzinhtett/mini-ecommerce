@@ -3,24 +3,33 @@ const Product = require("../models/Product");
 // Get All Products
 const getAllProducts = async (req, res) => {
   const products = await Product.find().sort("-createdAt");
-  res.status(200).render("admin", { products });
+  res.render("admin/admin", { products });
 };
 
 // Get Create Product Form
 const getAddProduct = async (req, res) => {
-  res.render("add-product");
+  res.render("admin/add-product");
 };
 
 // Create Product
 const createProduct = async (req, res) => {
-  const product = await Product.create(req.body);
+  let imageUrl = req.file.path;
+  const obj = {
+    title: req.body.title,
+    description: req.body.description,
+    quantity: req.body.quantity,
+    price: req.body.price,
+    category: req.body.category,
+    imageUrl: imageUrl.slice(7),
+  };
+  const product = await Product.create(obj);
   res.redirect("/admin");
 };
 
 // Get Edit Product Form
 const getEditProduct = async (req, res) => {
   const product = await Product.find({ _id: req.params.productID });
-  res.render("edit-product", {
+  res.render("admin/edit-product", {
     product,
   });
 };

@@ -1,249 +1,114 @@
-<!DOCTYPE html>
-<html lang="zxx" class="no-js">
-  <head>
-    <!-- Mobile Specific Meta -->
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <!-- Favicon-->
-    <link rel="shortcut icon" href="/img/fav.png" />
-    <!-- Author Meta -->
-    <meta name="author" content="CodePixar" />
-    <!-- Meta Description -->
-    <meta name="description" content="" />
-    <!-- Meta Keyword -->
-    <meta name="keywords" content="" />
-    <!-- meta character set -->
-    <meta charset="UTF-8" />
-    <!-- Site Title -->
-    <title>Karma Shop</title>
+<%- include('./partials/header.ejs') %>
 
-    <!-- CSS =====================================/======== -->
-    <link rel="stylesheet" href="/css/linearicons.css" />
-    <link rel="stylesheet" href="/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="/css/themify-icons.css" />
-    <link rel="stylesheet" href="/css/bootstrap.css" />
-    <link rel="stylesheet" href="/css/owl.carousel.css" />
-    <link rel="stylesheet" href="/css/main.css" />
-  </head>
-
-  <body>
-    <!-- Start Header Area -->
-    <header class="header_area sticky-header">
-      <div class="main_menu">
-        <nav class="navbar navbar-expand-lg navbar-light main_box">
-          <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <a class="navbar-brand logo_h" href="index.html"
-              ><img src="img/logo.png" alt=""
-            /></a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div
-              class="collapse navbar-collapse offset"
-              id="navbarSupportedContent"
-            >
-              <ul class="nav navbar-nav menu_nav ml-auto">
-                <li class="nav-item">
-                  <a class="nav-link" href="index.html">Home</a>
-                </li>
-
-                <li class="nav-item">
-                  <a class="nav-link" href="category.html">Shop</a>
-                </li>
-
-                <li class="nav-item">
-                  <a class="nav-link" href="login.html">Login</a>
-                </li>
-              </ul>
-              <ul class="nav navbar-nav navbar-right">
-                <li class="nav-item">
-                  <a href="#" class="cart"><span class="ti-bag"></span></a>
-                </li>
-                <li class="nav-item">
-                  <button class="search">
-                    <span class="lnr lnr-magnifier" id="search"></span>
-                  </button>
-                </li>
-              </ul>
-            </div>
-          </div>
+<!-- Start Banner Area -->
+<section class="banner-area organic-breadcrumb">
+  <div class="container">
+    <div
+      class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end"
+    >
+      <div class="col-first">
+        <h1>Shopping Cart</h1>
+        <nav class="d-flex align-items-center">
+          <a href="index.html">Home<span class="lnr lnr-arrow-right"></span></a>
+          <a href="category.html">Cart</a>
         </nav>
       </div>
-      <div class="search_input" id="search_input_box">
-        <div class="container">
-          <form class="d-flex justify-content-between">
-            <input
-              type="text"
-              class="form-control"
-              id="search_input"
-              placeholder="Search Here"
-            />
-            <button type="submit" class="btn"></button>
-            <span
-              class="lnr lnr-cross"
-              id="close_search"
-              title="Close Search"
-            ></span>
-          </form>
-        </div>
+    </div>
+  </div>
+</section>
+<!-- End Banner Area -->
+
+<!--================Cart Area =================-->
+<section class="cart_area">
+  <div class="container">
+    <div class="cart_inner">
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Product</th>
+              <th scope="col">Price</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="media">
+                  <div class="d-flex">
+                    <img src="img/cart.jpg" alt="" />
+                  </div>
+                  <div class="media-body">
+                    <p>Minimalistic shop for multipurpose use</p>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <h5>$360.00</h5>
+              </td>
+              <td>
+                <div class="product_count">
+                  <input
+                    type="text"
+                    name="qty"
+                    id="sst"
+                    maxlength="12"
+                    value="1"
+                    title="Quantity:"
+                    class="input-text qty"
+                  />
+                  <button
+                    onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
+                    class="increase items-count"
+                    type="button"
+                  >
+                    <i class="lnr lnr-chevron-up"></i>
+                  </button>
+                  <button
+                    onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
+                    class="reduced items-count"
+                    type="button"
+                  >
+                    <i class="lnr lnr-chevron-down"></i>
+                  </button>
+                </div>
+              </td>
+              <td>
+                <h5>$720.00</h5>
+              </td>
+            </tr>
+
+            <tr class="bottom_button">
+              <td>
+                <a class="gray_btn" href="#">Update Cart</a>
+              </td>
+              <td></td>
+              <td>
+                <h5>Subtotal</h5>
+              </td>
+              <td>
+                <h5>$2160.00</h5>
+              </td>
+            </tr>
+
+            <tr class="out_button_area">
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>
+                <div class="checkout_btn_inner d-flex align-items-center">
+                  <a class="gray_btn" href="#">Continue Shopping</a>
+                  <a class="primary-btn" href="#">Proceed to checkout</a>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-    </header>
-    <!-- End Header Area -->
+    </div>
+  </div>
+</section>
+<!--================End Cart Area =================-->
 
-    <!-- Start Banner Area -->
-    <section class="banner-area organic-breadcrumb">
-      <div class="container">
-        <div
-          class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end"
-        >
-          <div class="col-first">
-            <h1>Shopping Cart</h1>
-            <nav class="d-flex align-items-center">
-              <a href="index.html"
-                >Home<span class="lnr lnr-arrow-right"></span
-              ></a>
-              <a href="category.html">Cart</a>
-            </nav>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- End Banner Area -->
-
-    <!--================Cart Area =================-->
-    <section class="cart_area">
-      <div class="container">
-        <div class="cart_inner">
-          <div class="table-responsive">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th scope="col">Product</th>
-                  <th scope="col">Price</th>
-                  <th scope="col">Quantity</th>
-                  <th scope="col">Total</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <div class="media">
-                      <div class="d-flex">
-                        <img src="img/cart.jpg" alt="" />
-                      </div>
-                      <div class="media-body">
-                        <p>Minimalistic shop for multipurpose use</p>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    <h5>$360.00</h5>
-                  </td>
-                  <td>
-                    <div class="product_count">
-                      <input
-                        type="text"
-                        name="qty"
-                        id="sst"
-                        maxlength="12"
-                        value="1"
-                        title="Quantity:"
-                        class="input-text qty"
-                      />
-                      <button
-                        onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
-                        class="increase items-count"
-                        type="button"
-                      >
-                        <i class="lnr lnr-chevron-up"></i>
-                      </button>
-                      <button
-                        onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
-                        class="reduced items-count"
-                        type="button"
-                      >
-                        <i class="lnr lnr-chevron-down"></i>
-                      </button>
-                    </div>
-                  </td>
-                  <td>
-                    <h5>$720.00</h5>
-                  </td>
-                </tr>
-
-                <tr class="bottom_button">
-                  <td>
-                    <a class="gray_btn" href="#">Update Cart</a>
-                  </td>
-                  <td></td>
-                  <td>
-                    <h5>Subtotal</h5>
-                  </td>
-                  <td>
-                    <h5>$2160.00</h5>
-                  </td>
-                </tr>
-
-                <tr class="out_button_area">
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td>
-                    <div class="checkout_btn_inner d-flex align-items-center">
-                      <a class="gray_btn" href="#">Continue Shopping</a>
-                      <a class="primary-btn" href="#">Proceed to checkout</a>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--================End Cart Area =================-->
-
-    <!-- start footer Area -->
-    <footer class="footer-area section_gap">
-      <div class="container">
-        <div
-          class="footer-bottom d-flex justify-content-center align-items-center flex-wrap"
-        >
-          <p class="footer-text m-0">
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;
-            <script>
-              document.write(new Date().getFullYear());
-            </script>
-            All rights reserved | This template is made with
-            <i class="fa fa-heart-o" aria-hidden="true"></i> by
-            <a href="https://colorlib.com" target="_blank">Colorlib</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-          </p>
-        </div>
-      </div>
-    </footer>
-    <!-- End footer Area -->
-
-    <script src="/js/vendor/jquery-2.2.4.min.js"></script>
-    <script src="/js/jquery.nice-select.min.js"></script>
-    <script src="/js/jquery.sticky.js"></script>
-    <script src="/js/jquery.magnific-popup.min.js"></script>
-    <script src="/js/owl.carousel.min.js"></script>
-    <script src="/js/main.js"></script>
-  </body>
-</html>
+<%- include('./partials/footer.ejs') %>

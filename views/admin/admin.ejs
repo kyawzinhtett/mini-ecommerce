@@ -69,7 +69,13 @@
             <td><%= product.description %></td>
             <td><%= product.quantity %></td>
             <td><%= product.price %></td>
-            <td><%= product.image %></td>
+            <td>
+              <img
+                src="<%= product.imageUrl %>"
+                alt="<%= product.title %>"
+                width="80px"
+              />
+            </td>
             <td>
               <a
                 href="/admin/edit-product/<%= product.id %>"
@@ -88,7 +94,7 @@
           <% i++ } %>
         </tbody>
         <% } else { %>
-        <h1>No Products Found!</h1>
+        <h1 class="mt-5 text-center">No Products Found!</h1>
         <% } %>
       </table>
     </div>
